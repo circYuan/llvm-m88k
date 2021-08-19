@@ -554,6 +554,15 @@ enum : unsigned {
   EF_MIPS_ARCH = 0xf0000000       // Mask for applying EF_MIPS_ARCH_ variant
 };
 
+enum : unsigned {
+    EF_88K_NABI = 0x80000000,
+    EF_88K_M88110 = 0x00000004
+};
+
+enum {
+#include "ELFRelocs/M88k.def"
+};
+
 // ELF Relocation types for Mips
 enum {
 #include "ELFRelocs/Mips.def"
