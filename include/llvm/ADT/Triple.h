@@ -99,6 +99,7 @@ public:
     wasm64,         // WebAssembly with 64-bit pointers
     renderscript32, // 32-bit RenderScript
     renderscript64, // 64-bit RenderScript
+    m88k,           // motorola 88000
     ve,             // NEC SX-Aurora Vector Engine
     LastArchType = ve
   };
@@ -800,6 +801,10 @@ public:
   bool isArm64e() const {
     return getArch() == Triple::aarch64 &&
            getSubArch() == Triple::AArch64SubArch_arm64e;
+  }
+
+  bool isM88k() const {
+      return getArch() == Triple::m88k;
   }
 
   /// Tests whether the target supports comdat
